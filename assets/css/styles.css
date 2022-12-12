@@ -1,0 +1,128 @@
+/*========== GOOGLE FONTS ==========*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+/*========== VARIABLES CSS =========*/
+:root {
+  /*============ Colors ============*/
+  --color-moderate-violet: hsl(263, 55%, 52%);
+  --color-dark-grayish-blue: hsl(217, 19%, 35%);
+  --color-dark-blackish-blue: hsl(219, 29%, 14%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-gray: hsl(0, 0%, 81%);
+  --color-light-grayish-blue: hsl(210, 46%, 95%);
+
+  /*====== Font and typography =====*/
+  --primary-font: 'Barlow Semi Condensed', sans-serif;
+  --big-font-size: 1.25rem;
+  --small-font-size: 0.8125rem;
+  --smaller-font-size: 0.6875rem;
+}
+
+/*=============== BASE =============*/
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-light-grayish-blue);
+  font-family: var(--primary-font);
+  height: 100vh;
+  margin: 0;
+  padding: 1.5rem 1rem;
+}
+
+h2, p {
+  margin: 0;
+}
+
+main {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.testimonial {
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(217deg 19% 35% / 25%);
+}
+
+.testimonial:first-child {
+  background-image: url("../img/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: top right 10%;
+}
+
+.testimonial__header {
+  display: flex;
+  gap: 1rem;
+}
+
+.testimonial img {
+  width: 1.75rem;
+  border-radius: 50%;
+}
+
+.testimonial__header h2 {
+  font-size: var(--small-font-size);
+}
+
+.testimonial__header p {
+  font-size: var(--smaller-font-size);
+  opacity: 0.5;
+}
+
+.testimonial__body h1 {
+  font-size: var(--big-font-size);
+}
+
+.testimonial__body p {
+  font-size: var(--small-font-size);
+  opacity: 0.7;
+  line-height: 1.4;
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+.text-dark {
+  color: var(--color-dark-grayish-blue);
+}
+
+.bg-primary {
+  background-color: var(--color-moderate-violet);
+}
+
+.bg-secondary {
+  background-color: var(--color-dark-grayish-blue);
+}
+
+.bg-light {
+  background-color: var(--color-white);
+}
+
+.bg-dark {
+  background-color: var(--color-dark-blackish-blue);
+}
+
+@media screen and (min-width: 1140px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  main {
+    grid-template-columns: repeat(4, 1fr);
+    width: min(95%, 70rem);
+  }
+
+  .testimonial:last-child{
+    grid-column: 4;
+    grid-row: 1 / 3;
+  } 
+  
+  .grid-col-span-2 {
+    grid-column: span 2;
+  }  
+}
